@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/amino-aligner/static/css/main.e6c13ad2.css",
-    "main.js": "/amino-aligner/static/js/main.e92fb276.js",
-    "static/js/453.0f4748fb.chunk.js": "/amino-aligner/static/js/453.0f4748fb.chunk.js",
-    "index.html": "/amino-aligner/index.html",
-    "main.e6c13ad2.css.map": "/amino-aligner/static/css/main.e6c13ad2.css.map",
-    "main.e92fb276.js.map": "/amino-aligner/static/js/main.e92fb276.js.map",
-    "453.0f4748fb.chunk.js.map": "/amino-aligner/static/js/453.0f4748fb.chunk.js.map"
+    "main.css": "/Amino-Aligner/static/css/main.e6c13ad2.css",
+    "main.js": "/Amino-Aligner/static/js/main.5320afd2.js",
+    "static/js/453.0f4748fb.chunk.js": "/Amino-Aligner/static/js/453.0f4748fb.chunk.js",
+    "index.html": "/Amino-Aligner/index.html",
+    "main.e6c13ad2.css.map": "/Amino-Aligner/static/css/main.e6c13ad2.css.map",
+    "main.5320afd2.js.map": "/Amino-Aligner/static/js/main.5320afd2.js.map",
+    "453.0f4748fb.chunk.js.map": "/Amino-Aligner/static/js/453.0f4748fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.e92fb276.js"
+    "static/js/main.5320afd2.js"
   ]
 }
