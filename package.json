@@ -52,8 +52,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://Richbanker.github.io/Amino-Aligner/",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "homepage": "https://Richbanker.github.io/Amino-Aligner/"
 }
