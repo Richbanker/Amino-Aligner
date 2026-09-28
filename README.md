@@ -1,5 +1,8 @@
 # Amino Aligner
 
+
+[![Просмотры README](https://vbr.nathanchung.dev/badge?page_id=Richbanker.Amino-Aligner&text=README_Views)](https://github.com/Richbanker/Amino-Aligner)
+
 Визуализатор выравнивания аминокислотных последовательностей
 
 ## Стек
