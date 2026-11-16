@@ -69,7 +69,7 @@ export const AlignmentView: React.FC<AlignmentViewProps> = ({ seq1, seq2, chunkS
           <div style={{ display: 'flex', flexWrap: 'nowrap' }} data-align-row="2">
             {seq2.slice(start, start + adaptiveChunk).split('').map((char, i) => {
               const idxGlobal = start + i;
-              const isDiff = seq1[idxGlobal] !== seq2[idxGlobal];
+              const isDiff = seq1[idxGlobal].toUpperCase() !== seq2[idxGlobal].toUpperCase();
               return (
                 <span
                   key={i}
