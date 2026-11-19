@@ -24,6 +24,11 @@ const App: React.FC = () => {
   const [copied, setCopied] = React.useState(false);
   const alignmentRef = React.useRef<HTMLDivElement>(null);
 
+  React.useEffect(() => {
+    setAlignment(null);
+    setCopied(false);
+  }, [seq1, seq2]);
+
   const handleLangChange = (event: any) => {
     const newLang = event.target.value as string;
     setLang(newLang);
