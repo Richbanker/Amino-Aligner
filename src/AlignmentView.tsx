@@ -9,22 +9,24 @@ interface AlignmentViewProps {
 }
 
 export const AlignmentView: React.FC<AlignmentViewProps> = ({ seq1, seq2, chunkSize, onCopy }) => {
-  const [adaptiveChunk, setAdaptiveChunk] = React.useState(chunkSize || 40);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [adaptiveChunk, setAdaptiveChunk] = React.useState(Math.max(1, chunkSize || 40));
 
   React.useEffect(() => {
     function handleResize() {
-      // Примерная ширина одного символа: 22px (padding + minWidth + margin)
-      const width = window.innerWidth;
-      let c = 40;
-      if (width < 350) c = 10;
-      else if (width < 500) c = 18;
-      else if (width < 700) c = 28;
-      else c = chunkSize || 40;
-      setAdaptiveChunk(c);
+      const width = containerRef.current?.clientWidth || window.innerWidth;
+      // Ширина одного символа с padding и margin — примерно 30px.
+      const fit = Math.max(1, Math.floor(width / 30));
+      setAdaptiveChunk(Math.max(1, Math.min(chunkSize || 40, fit)));
     }
     handleResize();
+    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(handleResize) : null;
+    if (containerRef.current) observer?.observe(containerRef.current);
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, [chunkSize]);
 
   if (!seq1 || !seq2 || seq1.length !== seq2.length) return null;
@@ -39,6 +41,7 @@ export const AlignmentView: React.FC<AlignmentViewProps> = ({ seq1, seq2, chunkS
 
   return (
     <div
+      ref={containerRef}
       style={{ width: '100%', fontFamily: 'monospace', fontSize: 18, overflowX: 'auto', userSelect: 'text' }}
       onCopy={handleCopy}
       aria-label="alignment-view"
