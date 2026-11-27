@@ -32,6 +32,12 @@ const resources = {
   }
 };
 
+i18n.on('languageChanged', (language) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = language;
+  }
+});
+
 i18n
   .use(initReactI18next)
   .init({
